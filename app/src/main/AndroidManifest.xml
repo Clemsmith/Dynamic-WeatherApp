@@ -14,6 +14,9 @@
         android:theme="@style/Theme.A0368816_DynamicWeatherApp"
         tools:targetApi="31">
         <activity
+            android:name=".CurrentCity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
