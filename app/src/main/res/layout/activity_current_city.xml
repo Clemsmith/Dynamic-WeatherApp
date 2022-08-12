@@ -41,8 +41,8 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Tommorrow"
-            android:id="@+id/tommorrow"/>
+            android:text="Tomorrow"
+            android:id="@+id/tomorrow"/>
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="match_parent"
