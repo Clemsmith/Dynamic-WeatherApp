@@ -1,13 +1,13 @@
-package adapter;
+package uk.ac.tees.aad.a0368816_dynamicweatherapp.adapter;
 // almost completed
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import Fragments.Later;
-import Fragments.Today;
-import Fragments.Tomorrow;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Later;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Today;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Tomorrow;
 
 public class pageAdapter extends FragmentPagerAdapter {
     int totalFragment;

@@ -1,4 +1,4 @@
-package Singleton;
+package uk.ac.tees.aad.a0368816_dynamicweatherapp.Singleton;
 
 import android.content.Context;
 

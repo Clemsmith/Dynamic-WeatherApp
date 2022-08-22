@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1039790377124",
+    "project_id": "weatherapp-1aac7",
+    "storage_bucket": "weatherapp-1aac7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039790377124:android:97eb80143f9ce98e493e31",
+        "android_client_info": {
+          "package_name": "com.company.weatherApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039790377124-1qc8mt1ccdag5l7o3q8tet5ahld7a3hd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1xhUJ4I0zzxbS5B8V58uS5lsaqdDj4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039790377124-1qc8mt1ccdag5l7o3q8tet5ahld7a3hd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039790377124:android:d15bcb9f4dc8a605493e31",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.aad.a0368816_dynamicweatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039790377124-1qc8mt1ccdag5l7o3q8tet5ahld7a3hd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1xhUJ4I0zzxbS5B8V58uS5lsaqdDj4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039790377124-1qc8mt1ccdag5l7o3q8tet5ahld7a3hd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

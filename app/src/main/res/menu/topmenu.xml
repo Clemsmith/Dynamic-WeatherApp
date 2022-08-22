@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+
+    <item
+        android:id="@+id/verticalitem"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:menuCategory="container"
+        android:title="Item"
+        app:showAsAction="always">
+
+
+        <menu>
+
+            <item
+                android:id="@+id/serchbyCity"
+                android:icon="@color/cardview_dark_background"
+                android:title="Search by City"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/searchbyLat"
+                android:icon="@color/cardview_dark_background"
+                android:title="Search By lat"
+                app:showAsAction="ifRoom" />
+
+
+
+        </menu>
+
+
+    </item>
+
+
+</menu>

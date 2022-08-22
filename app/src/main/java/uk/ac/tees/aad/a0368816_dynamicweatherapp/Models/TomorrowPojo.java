@@ -1,4 +1,4 @@
-package Models;
+package uk.ac.tees.aad.a0368816_dynamicweatherapp.Models;
 
 public class TomorrowPojo {
 

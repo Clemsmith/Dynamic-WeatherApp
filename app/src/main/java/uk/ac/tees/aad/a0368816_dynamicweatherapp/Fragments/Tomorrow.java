@@ -1,13 +1,20 @@
-package Fragments;
+package uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.TomorrowPojo;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.adapter.TomorrowAdapter;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.CurrentCity;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.R;
 
 /**
@@ -16,6 +23,10 @@ import uk.ac.tees.aad.a0368816_dynamicweatherapp.R;
  * create an instance of this fragment.
  */
 public class Tomorrow extends Fragment {
+    public RecyclerView recyclerView;
+    public ArrayList<TomorrowPojo> mylist;
+
+    public static TomorrowAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +71,20 @@ public class Tomorrow extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_tomorrow, container, false);
+
+
+        recyclerView = view.findViewById(R.id.tommorrowRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mylist = CurrentCity.getTommorrowArrayList();
+
+        adapter = new TomorrowAdapter(mylist, getContext());
+        recyclerView.setAdapter(adapter);
+
+        return view;
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tomorrow, container, false);
+
     }
 }
