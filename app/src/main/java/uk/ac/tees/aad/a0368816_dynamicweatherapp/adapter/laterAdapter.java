@@ -13,16 +13,16 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.todayPojo;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.laterPojo;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.R;
 
-public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.viewholder>{
+public class laterAdapter extends RecyclerView.Adapter<laterAdapter.viewholder>{
 
 
 
-    public  ArrayList<todayPojo> arrayList;
+    public  ArrayList<laterPojo> arrayList;
     Context context;
-    public  TodayAdapter(ArrayList<todayPojo> arrayList,Context context)
+    public  laterAdapter(ArrayList<laterPojo> arrayList,Context context)
     {
         this.arrayList = arrayList;
         this.context = context;
@@ -32,8 +32,8 @@ public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.viewholder>{
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_info_row,parent,false);
-        return new TodayAdapter.viewholder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_info_row_later,parent,false);
+        return new laterAdapter.viewholder(view);
 
     }
     @Override
@@ -79,14 +79,14 @@ public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.viewholder>{
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            weatherimg = itemView.findViewById(R.id.imageViews);
-            datetime = itemView.findViewById(R.id.dayandtime);
-            description= itemView.findViewById(R.id.dayinfo);
-            Temprature = itemView.findViewById(R.id.temprature);
+            weatherimg = itemView.findViewById(R.id.imageViewLater);
+            datetime = itemView.findViewById(R.id.dayandtimeLater);
+            description= itemView.findViewById(R.id.dayinfoLater);
+            Temprature = itemView.findViewById(R.id.tempratureLater);
 
-            humidity = itemView.findViewById(R.id.humadity);
-            wind = itemView.findViewById(R.id.wind);
-            pressure = itemView.findViewById(R.id.pressure);
+            humidity = itemView.findViewById(R.id.humadityLater);
+            wind = itemView.findViewById(R.id.windLater);
+            pressure = itemView.findViewById(R.id.pressureLater);
         }
     }
 

@@ -16,13 +16,11 @@
         <menu>
 
             <item
-                android:id="@+id/serchbyCity"
-                android:icon="@color/cardview_dark_background"
+                android:id="@+id/abc"
                 android:title="Search by City"
                 app:showAsAction="ifRoom" />
             <item
                 android:id="@+id/searchbyLat"
-                android:icon="@color/cardview_dark_background"
                 android:title="Search By lat"
                 app:showAsAction="ifRoom" />
 

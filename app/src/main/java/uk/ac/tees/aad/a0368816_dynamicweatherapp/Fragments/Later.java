@@ -3,12 +3,21 @@ package uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.CurrentCity;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.laterPojo;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.todayPojo;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.R;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.adapter.TodayAdapter;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.adapter.laterAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +25,10 @@ import uk.ac.tees.aad.a0368816_dynamicweatherapp.R;
  * create an instance of this fragment.
  */
 public class Later extends Fragment {
+    public RecyclerView recyclerView;
+    public ArrayList<laterPojo> mylist;
+
+    public static laterAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +74,17 @@ public class Later extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_later, container, false);
+        View view = inflater.inflate(R.layout.fragment_later, container, false);
+
+
+
+        recyclerView = view.findViewById(R.id.laterRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mylist = CurrentCity.getLaterArrayList();
+
+        adapter = new laterAdapter(mylist,getContext());
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 }

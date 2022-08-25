@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+
     <View
         android:id="@+id/view3"
         android:layout_width="411dp"
@@ -11,76 +13,73 @@
         android:background="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/humadity" />
+        app:layout_constraintTop_toBottomOf="@+id/humadityLater" />
 
     <TextView
-        android:id="@+id/temprature"
+        android:id="@+id/tempratureLater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="4dp"
 
-        android:text="Temperature"
+        android:text="Temprature"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViews" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLater" />
 
     <ImageView
-        android:id="@+id/imageViews"
+        android:id="@+id/imageViewLater"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="5dp"
-
         android:padding="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/temprature"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_launcher_foreground" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/humadity"
+        android:id="@+id/humadityLater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="4dp"
         android:text="WindInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pressure" />
+        app:layout_constraintTop_toBottomOf="@+id/pressureLater" />
 
     <TextView
-        android:id="@+id/pressure"
+        android:id="@+id/pressureLater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="4dp"
         android:text="WindInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wind" />
+        app:layout_constraintTop_toBottomOf="@+id/windLater" />
 
     <TextView
-        android:id="@+id/wind"
+        android:id="@+id/windLater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="4dp"
         android:text="WindInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dayinfo" />
+        app:layout_constraintTop_toBottomOf="@+id/dayinfoLater" />
 
     <TextView
-        android:id="@+id/dayinfo"
+        android:id="@+id/dayinfoLater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
         android:text="Day info"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dayandtime" />
+        app:layout_constraintTop_toBottomOf="@+id/dayandtimeLater" />
 
     <TextView
-        android:id="@+id/dayandtime"
+        android:id="@+id/dayandtimeLater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"

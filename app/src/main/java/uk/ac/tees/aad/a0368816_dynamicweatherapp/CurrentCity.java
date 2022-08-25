@@ -29,14 +29,18 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Later;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Today;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.TomorrowPojo;
+import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.laterPojo;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.Models.todayPojo;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.Singleton.Singleton;
 import uk.ac.tees.aad.a0368816_dynamicweatherapp.adapter.pageAdapter;
 
 public class CurrentCity extends AppCompatActivity {
     TextView cityname;
+
+    TextView feellike,Temp,CityName;
 
     TabLayout tabLayout;
     TabItem Today,Tomorrow,Later;
@@ -47,6 +51,8 @@ public class CurrentCity extends AppCompatActivity {
     Toolbar toolbar;
     public static ArrayList<todayPojo> arrayList;
     public static ArrayList<TomorrowPojo> tomorrowArrayList;
+    public static ArrayList<laterPojo> laterArrayList;
+    public static ArrayList<laterPojo> getLaterArrayList(){return laterArrayList;}
     public static ArrayList<todayPojo> getArrayList() {
 
 
@@ -67,7 +73,7 @@ public class CurrentCity extends AppCompatActivity {
         setContentView(R.layout.activity_current_city);
         arrayList = new ArrayList<>();
         tomorrowArrayList = new ArrayList<>();
-
+        laterArrayList = new ArrayList<>();
 
         toolbar = findViewById(R.id.toolbar);
 
@@ -75,6 +81,9 @@ public class CurrentCity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
 
         getSupportActionBar().show();
+        feellike = findViewById(R.id.feellikee);
+        Temp = findViewById(R.id.maintemp);
+        CityName = findViewById(R.id.cityName);
         cityname = findViewById(R.id.citName);
         viewPager = findViewById(R.id.viewpager);
         Today = findViewById(R.id.today);
@@ -121,8 +130,43 @@ public class CurrentCity extends AppCompatActivity {
 
         String s = sh.getString("City", "");
         Toast.makeText(CurrentCity.this, lat + " and   " + lon, Toast.LENGTH_LONG).show();
+        CityName.setText(s);
 
-        String url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&cnt=10&appid=e8c47ac2148c920c9b6fa302ceafaad7";
+        String urls = "https://api.openweathermap.org/data/2.5/weather?q="+s+"&appid=e8c47ac2148c920c9b6fa302ceafaad7";
+
+        JsonObjectRequest jsonObjectRequests = new JsonObjectRequest(Request.Method.GET, urls, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+
+                //   Toast.makeText(CurrentCityWeather.this,response.toString(),Toast.LENGTH_LONG).show();
+                try {
+                    JSONObject object = response.getJSONObject("main");
+                    String tempholder = object.getString("temp");
+                    String feelholder = object.getString("feels_like");
+
+                    Float temp = Float.parseFloat(tempholder);
+                    Float feels = Float.parseFloat(feelholder);
+                    feels = feels-273.0f;
+                    temp = temp-273.0f;
+                    feellike.setText(" Feel like " + Math.round(feels)+" °c");
+                    Temp.setText("temp "+ Math.round(temp )+" °c");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        Singleton.getInstance(this).addToRequestQueue(jsonObjectRequests);
+
+        String url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&cnt=20&appid=e8c47ac2148c920c9b6fa302ceafaad7";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -147,7 +191,7 @@ public class CurrentCity extends AppCompatActivity {
 
                         JSONObject weatherobj = obj2.getJSONObject(0);
                         String desc = weatherobj.getString("description");
-                        String icoo = weatherobj.getString("icon");
+                        String icons = weatherobj.getString("icon");
 
                         String dates = objects.getString("dt_txt");
                         //  String des = Obj2.getString(3);
@@ -164,18 +208,21 @@ public class CurrentCity extends AppCompatActivity {
                         String x = "12";
                         String xxx = "12";
                         int num = Integer.parseInt(sub);
-                        Toast.makeText(CurrentCity.this, icoo, Toast.LENGTH_LONG).show();
                         if (num == dayOfMonth) {
 
-                            arrayList.add(new todayPojo(dates, desc, xx, hum, presure, sub, icoo));
+                            arrayList.add(new todayPojo(dates, desc, xx, hum, presure, sub, icons));
                         }
-                        if (num != dayOfMonth) {
-                            tomorrowArrayList.add(new TomorrowPojo(dates, desc, finalTemprature + "", hum, presure, sub, icoo));
+                        if (num == dayOfMonth+1) {
+                            tomorrowArrayList.add(new TomorrowPojo(dates, desc, finalTemprature + "", hum, presure, sub, icons));
+                        }
+                        if (num >= dayOfMonth+2) {
+                            laterArrayList.add(new laterPojo(dates, desc, finalTemprature + "", hum, presure, sub, icons));
                         }
                     }
 
                     uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Today.adapter.notifyDataSetChanged();
                     uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Tomorrow.adapter.notifyDataSetChanged();
+                    //uk.ac.tees.aad.a0368816_dynamicweatherapp.Fragments.Later.adapter.notifyDataSetChanged();
 
 
 
@@ -209,9 +256,9 @@ public class CurrentCity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.serchbyCity:
-                //Intent intent = new Intent(CurrentCity.this, SearchbyCity.class);
-              //  startActivity(intent);
+            case R.id.abc:
+                Intent intent = new Intent(CurrentCity.this, SearchbyCity.class);
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
