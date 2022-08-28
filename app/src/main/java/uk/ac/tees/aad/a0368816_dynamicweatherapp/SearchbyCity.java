@@ -146,9 +146,9 @@ public class SearchbyCity extends AppCompatActivity  {
                                 String presu = jsonObject.getString("pressure");
 
                                 float tempratureHolder = Float.parseFloat(temps);
-                                float temprature = tempratureHolder - 273.0f;
+                                float temprature = tempratureHolder - 273.0f ;
                                 float FeelHolder = Float.parseFloat(Feel);
-                                float FeelLike = FeelHolder - 273.0f;
+                                float FeelLike = FeelHolder - 273.0f    ;
                                 float MinHolder = Float.parseFloat(MinTemp);
                                 Float min = MinHolder - 273.0f;
                                 float MaxHolder = Float.parseFloat(MaxTemp);
@@ -166,10 +166,10 @@ public class SearchbyCity extends AppCompatActivity  {
                                 String SunRiseTime = sdf.format(timeD);
                                 String SunSetTime = sdf.format(timeS);
 
-                                temp.setText(temprature + " °C");
-                                Feelslike.setText(FeelLike + " °C");
-                                Min_Temp.setText(min + " °C");
-                                Max_Temp.setText(max + " °C");
+                                temp.setText(Math.round(temprature * 100.0)/100.0 + " °C");
+                                Feelslike.setText(Math.round(FeelLike * 100.0)/100.0 + " °C");
+                                Min_Temp.setText(Math.round(min * 100.0)/100.0 + " °C");
+                                Max_Temp.setText(Math.round(max * 100.0)/100.0 + " °C");
 
                                 SunRise.setText(SunRiseTime);
                                 Sunset.setText(SunSetTime);

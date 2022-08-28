@@ -149,8 +149,8 @@ public class CurrentCity extends AppCompatActivity {
                     Float feels = Float.parseFloat(feelholder);
                     feels = feels-273.0f;
                     temp = temp-273.0f;
-                    feellike.setText(" Feel like " + Math.round(feels)+" °c");
-                    Temp.setText("temp "+ Math.round(temp )+" °c");
+                    feellike.setText(" Feels like " + Math.round(feels)+" °c");
+                    Temp.setText("Temperature "+ Math.round(temp )+" °c");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -209,14 +209,13 @@ public class CurrentCity extends AppCompatActivity {
                         String xxx = "12";
                         int num = Integer.parseInt(sub);
                         if (num == dayOfMonth) {
-
-                            arrayList.add(new todayPojo(dates, desc, xx, hum, presure, sub, icons));
+                            arrayList.add(new todayPojo(dates, desc, Math.round(finalTemprature*100.0)/100.0 + "°C", hum + "g/m3", presure+" PA", sub + "m/s", icons));
                         }
                         if (num == dayOfMonth+1) {
-                            tomorrowArrayList.add(new TomorrowPojo(dates, desc, finalTemprature + "", hum, presure, sub, icons));
+                            tomorrowArrayList.add(new TomorrowPojo(dates, desc, Math.round(finalTemprature*100.0)/100.0 + " °C", hum + "g/m3", presure +" g.kg-1", sub + "m/s", icons));
                         }
                         if (num >= dayOfMonth+2) {
-                            laterArrayList.add(new laterPojo(dates, desc, finalTemprature + "", hum, presure, sub, icons));
+                            laterArrayList.add(new laterPojo(dates, desc, Math.round(finalTemprature*100.0)/100.0 + " °C", hum, presure + "g/m3", sub +"m/s", icons));
                         }
                     }
 
@@ -260,6 +259,15 @@ public class CurrentCity extends AppCompatActivity {
                 Intent intent = new Intent(CurrentCity.this, SearchbyCity.class);
                 startActivity(intent);
                 break;
+            case R.id.searchbyLat:
+                Intent intent1 = new Intent(CurrentCity.this, SearchbyLatLon.class);
+                startActivity(intent1);
+                break;
+            case R.id.mapsearch:
+                Intent intent2 = new Intent(CurrentCity.this, MapsActivity.class);
+                startActivity(intent2);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

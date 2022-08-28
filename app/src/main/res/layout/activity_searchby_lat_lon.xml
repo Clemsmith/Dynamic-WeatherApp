@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".SearchbyCity">
+    android:background="#000"
+    tools:context=".SearchbyLatLon">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,8 +24,8 @@
             android:id="@+id/latimg"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="48dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,9 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
-            android:text="Rain"
             android:textColor="#fff"
             android:textStyle="bold"
+            android:text="Rain"
             app:layout_constraintStart_toEndOf="@+id/textView11"
             app:layout_constraintTop_toBottomOf="@+id/latsunRiseId" />
 
@@ -47,11 +47,11 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:text="weather"
-            android:textColor="#fff"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -59,11 +59,11 @@
             android:id="@+id/latsunRiseId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:text="18::00"
-            android:textColor="#fff"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/latsunsetid" />
 
@@ -71,11 +71,11 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:text="SunRise"
-            android:textColor="#fff"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -84,10 +84,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
-            android:text="17:00"
             android:textColor="#fff"
             android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:text="17:00"
             app:layout_constraintStart_toEndOf="@+id/textView7"
             app:layout_constraintTop_toBottomOf="@+id/latdescriptionId" />
 
@@ -96,10 +96,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
-            android:text="Sunset"
             android:textColor="#fff"
             android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:text="Sunset"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -107,11 +107,11 @@
             android:id="@+id/latdescriptionId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:text="0.0"
-            android:textColor="#fff"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,11 +119,11 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
-            android:text="Description-"
             android:textColor="#fff"
             android:textStyle="bold"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:text="Description"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -139,27 +139,27 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="Temperature"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Temprature"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/lattemp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="0.0"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="0.0"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:id="@+id/layout3"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/layout1">
 
@@ -169,130 +169,128 @@
             android:padding="16dp"
             android:text="Feels like"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/latfeelslike"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="0.0"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="0.0"
+            android:textSize="16sp" />
 
     </LinearLayout>
-
     <LinearLayout
-        android:id="@+id/layout4"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:id="@+id/layout4"
         app:layout_constraintTop_toBottomOf="@+id/layout3">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="Min Temperature"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Min Temp"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/latMinTemp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="0.0"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="0.0"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:id="@+id/layout5"
         app:layout_constraintTop_toBottomOf="@+id/layout4">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="Max Temperature"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Max Temp"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/latMaxTemp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="0.0"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="0.0"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout6"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:id="@+id/layout6"
         app:layout_constraintTop_toBottomOf="@+id/layout5">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="Pressure"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Pressure"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/latPressures"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="0.0"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="0.0"
+            android:textSize="16sp" />
 
     </LinearLayout>
-
     <LinearLayout
-        android:id="@+id/layout7"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:id="@+id/layout7"
         app:layout_constraintTop_toBottomOf="@+id/layout6">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="Humidity"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Humidity"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/latHumiditys"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="0.0"
             android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="0.0"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -302,9 +300,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="120dp"
+        android:text="CityName"
         android:textColor="#fff"
-        android:textSize="22sp"
         android:textStyle="bold"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout0" />
 
@@ -313,33 +312,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:weightSum="10"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/SearchBycity"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
+            android:id="@+id/searchbyLat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
+            android:layout_weight="4"
             android:layout_marginStart="12dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="12dp"
-            android:layout_weight="8"
             android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/ic_baseline_location_searching_24"
+            android:drawableStart="@drawable/ic_baseline_add_location_alt_24"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Search City"
+            android:hint="Lattititude"
             android:inputType="textEmailAddress"
             android:paddingStart="12dp"
             android:paddingLeft="4dp"
             android:paddingTop="4dp"
-
-
             android:paddingEnd="12dp"
             android:paddingRight="4dp"
             android:paddingBottom="4dp"
@@ -347,45 +342,58 @@
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/latgo"
+        <EditText
+            android:id="@+id/SearchByLon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="4"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/ic_baseline_add_location_alt_24"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Longitude"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/latgo"
             android:layout_weight="2"
-            android:backgroundTint="#ff3300"
             android:text="GO"
+            android:textStyle="bold"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:backgroundTint="#ff3300"/>
 
     </LinearLayout>
+
 
 
     <Button
         android:id="@+id/letdetailInformation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:backgroundTint="#ff3300"
-
         android:padding="12dp"
-        android:text="Detailed Information"
+        android:layout_margin="30dp"
+
         android:textSize="20sp"
+        android:backgroundTint="#ff3300"
+        android:text="Detail Information"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/city_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="CurrentCity"
-        android:textColor="#FAFAFA"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/layout2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

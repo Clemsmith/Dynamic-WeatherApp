@@ -7,11 +7,14 @@
         <entry key="app/src/main/res/drawable/back.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/custom_input.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_location_alt_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_format_list_bulleted_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_current_city.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_search_by_city.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_searchby_city.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_searchby_lat_lon.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_later.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_today.xml" value="0.19610507246376813" />

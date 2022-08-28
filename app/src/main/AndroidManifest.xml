@@ -35,6 +35,17 @@
         <activity
             android:name=".SearchbyCity"
             android:exported="false" />
+        <activity
+            android:name=".SearchbyLatLon"
+            android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="true"
+            >
+        </activity>
     </application>
 
 </manifest>
